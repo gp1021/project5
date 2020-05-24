@@ -5,31 +5,23 @@ import javax.swing.JPanel;
 
 public class Window2 {
 	 //pop up
-	
-		public void msg(JPanel jPanel) {
-			JOptionPane.showMessageDialog(null, jPanel); //sends a message to the user
-		}
 		
 		public String in(String msg) {
-			return JOptionPane.showInputDialog(msg);
+			return JOptionPane.showInputDialog(msg); //asks the user to input a response in a jpane
 		}
 		
 		public void println(String msg) {
-			System.out.println(msg);
+			System.out.println(msg); //prints out a string message
 		}
 		
+		//provides the user with the buttons to choose whether they would like to practice addition/subtraction or multiplication/division
 		public int option(String[] options) {
 			return JOptionPane.showOptionDialog(null, "Choose what you'd like to practice.", "Artithmetic Practice", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 		}
 
 		public void msg1(String string) {
-			JOptionPane.showMessageDialog(null, string);
+			JOptionPane.showMessageDialog(null, string); //shows the user a string message in a jpane
 			
-		}
-
-		public int option(String[] replay, String string) {
-			// TODO Auto-generated method stub
-			return JOptionPane.showOptionDialog(null, string, "Replay", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, replay, replay[0]);
 		}
 
 		
