@@ -2,6 +2,7 @@ package lab2;
 
 public class User {
 	private Window2 _w;
+	//instance variables
 	int x = (int)(Math.random() * 9);
 	int y = (int)(Math.random() * 9);
 	int sign = (int)(Math.random() * 2);
@@ -13,6 +14,9 @@ public class User {
 	int correct;
 	int incorrect;
 	
+	//constructor
+	//contains the steps for how the user sees the program runs
+	//asks what the user would like to practice (addition and subtraction or multiplication and division) and then collects their answers and accuracy
 	public User() {
 		_w = new Window2();
 		_w.msg1("Welcome to Arithmetic Practice!");
@@ -58,6 +62,7 @@ public class User {
 			}
 	}
 	
+	//collects the number of correct and incorrect responses to the arithmetic questions, and then calculates the percentage of right answers
 	public String tally() {
 		double total = correct + incorrect;
 		double percent = (correct / total) * 100;
@@ -65,6 +70,7 @@ public class User {
 		return "Your score was " + percent + "%";
 	}
 	
+	//collects the answer the user puts in for the addition/subtraction questions, as well as if they type "exit" and terminates the program
 	public int getUsersAnswer() {
 		String x = _w.in(problemGenerator());
 		if (x.equals("exit") || x.equals("Exit")) {
@@ -74,6 +80,7 @@ public class User {
 		return y;
 	}
 	
+	//collects the answer the user puts in for the multiplication/division questions, as well as if they type "exit" and terminates the program
 	public int getUsersAnswer2() {
 		String x = _w.in(problemGenerator2());
 		if (x.equals("exit") || x.equals("Exit")) {
@@ -83,6 +90,7 @@ public class User {
 		return y;
 	}
 	
+	//generates an addition or subtraction problem that can only return a positive answer
 	public String problemGenerator() {
 		String result;
 		if (sign == 1) {
@@ -97,6 +105,7 @@ public class User {
 		return result;
 	}
 	
+	//generates a multiplication or division problem
 	public String problemGenerator2() {
 		String result;
 		if (sign == 1) {
@@ -113,6 +122,7 @@ public class User {
 		return result;
 	}
 	
+	//checks if the user got the addition/subtraction question right or wrong, as well as generating numbers for the next question
 	public boolean rightOrWrong() {
 		if (sign == 1) {
 			if (getUsersAnswer() == (x+y)) {
@@ -155,6 +165,7 @@ public class User {
 		}
 	}
 	
+	//checks if the user got the multiplication/division question right or wrong, as well as generating numbers for the next question
 	public boolean rightOrWrong2() {
 		if (sign == 1) {
 			if (getUsersAnswer2() == (x*y)) {
